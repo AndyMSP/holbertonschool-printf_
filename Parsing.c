@@ -79,7 +79,7 @@ char *get_arg(char spec, va_list ap)
 	case '%':
 		res = malloc(sizeof(char) * 2);
 		res[0] = '%';
-		res[1] = '\0';
+		res[1] = -1;
 		break;
 	}
 
