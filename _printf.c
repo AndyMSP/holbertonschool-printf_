@@ -14,14 +14,15 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	char **substrings = NULL;
-	int len = 0, i = 0, printed = 0;
+	int len = 0, i = 0, printed = 0, args;
 
 	va_start(ap, format);
 
 	substrings = parser(format, ap);
+	args = calc_args(format);
 
 	i = 0;
-	while (substrings[i])
+	while (i < args)
 	{
 		len = seg_len(substrings[i], '\0');
 		printed += len;
