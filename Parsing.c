@@ -21,9 +21,12 @@ char **parser(const char *format, va_list ap)
 
 	/* malloc number of pointers */
 	strings = malloc(sizeof(char *) * (args + 1));
+	if (!strings)
+		return (NULL);
 
 	/* malloc for each pointer */
-	i = 0, j = 0;
+	i = 0,
+	j = 0;
 	while (i < args)
 	{
 		if (format[j] == '%')

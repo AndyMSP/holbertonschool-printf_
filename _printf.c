@@ -22,6 +22,8 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 
 	substrings = parser(format, ap);
+	if (!substrings)
+		return (-1);
 	args = calc_args(format);
 
 	i = 0;
