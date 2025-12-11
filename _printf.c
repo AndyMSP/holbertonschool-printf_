@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (i < args)
 	{
-		if (substrings[i][0] == -1)
+		if (substrings[i][0] == -1 && substrings[i][1] == -1)
 		{
 			free_all(substrings);
 			return (-1);
